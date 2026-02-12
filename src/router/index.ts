@@ -6,6 +6,12 @@ const routes = [
     name: 'Hello',
     component: () => import('../views/Hello.vue'),
     meta: { title: 'Hello' }
+  },
+  {
+    path: '/image-preview',
+    name: 'ImagePreviewDemo',
+    component: () => import('../views/demo/ImagePreviewDemo.vue'),
+    meta: { title: '图片预览' }
   }
 ]
 
@@ -15,3 +21,4 @@ const router = createRouter({
 })
 
 export default router
+

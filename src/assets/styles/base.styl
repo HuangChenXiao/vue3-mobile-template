@@ -7,6 +7,14 @@
 *, *::before, *::after
   box-sizing border-box
 
+// 去除所有元素点击时的蓝色/灰色高亮 (移动端)
+*
+  -webkit-tap-highlight-color transparent
+
+*:focus,
+*:active
+  outline none
+
 // ==========================================================================
 // 2. Margin Reset - 移除默认外边距
 // ==========================================================================
@@ -103,6 +111,13 @@ img, picture, video, canvas, svg
 
 img, svg
   border-style none
+
+// 去除 img 点击时的 active/高亮样式 (移动端)
+img
+  -webkit-tap-highlight-color transparent
+  -webkit-touch-callout none
+  user-select none
+  outline none
 
 // ==========================================================================
 // 9. Forms - 表单 (参考 Normalize.css)
