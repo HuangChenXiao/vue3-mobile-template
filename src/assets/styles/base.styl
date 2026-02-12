@@ -1,0 +1,198 @@
+// base.styl - 初始化样式
+// 参考: Normalize.css, Josh Comeau's Custom CSS Reset, Eric Meyer's Reset
+
+// ==========================================================================
+// 1. Box Model - 统一盒模型
+// ==========================================================================
+*, *::before, *::after
+  box-sizing border-box
+
+// ==========================================================================
+// 2. Margin Reset - 移除默认外边距
+// ==========================================================================
+*, *::before, *::after
+  margin 0
+  padding 0
+
+// dialog 保留 margin: auto 用于居中
+dialog
+  margin auto
+
+// ==========================================================================
+// 3. Document - 文档基础 (参考 Normalize.css)
+// ==========================================================================
+html
+  line-height 1.15
+  -webkit-text-size-adjust 100%  // 防止 iOS 横竖屏字体缩放
+  -moz-tab-size 4
+  tab-size 4
+
+// ==========================================================================
+// 4. Body - 基础文本与渲染
+// ==========================================================================
+body
+  min-height 100vh
+  line-height 1.5
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  text-rendering optimizeLegibility
+
+// ==========================================================================
+// 5. Sections - 区块元素
+// ==========================================================================
+main
+  display block
+
+h1, h2, h3, h4, h5, h6
+  font-size inherit
+  font-weight inherit
+
+// ==========================================================================
+// 6. Grouping - 分组元素
+// ==========================================================================
+hr
+  box-sizing content-box
+  height 0
+  overflow visible
+  color inherit
+
+pre
+  font-family ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace
+  font-size 1em
+
+// ==========================================================================
+// 7. Text - 文本语义
+// ==========================================================================
+a
+  background-color transparent
+  color inherit
+  text-decoration inherit
+
+abbr[title]
+  text-decoration underline dotted
+
+b, strong
+  font-weight bolder
+
+code, kbd, samp
+  font-family ui-monospace, SFMono-Regular, Consolas, monospace
+  font-size 1em
+
+small
+  font-size 80%
+
+sub, sup
+  font-size 75%
+  line-height 0
+  position relative
+  vertical-align baseline
+
+sub
+  bottom -0.25em
+
+sup
+  top -0.5em
+
+// ==========================================================================
+// 8. Embedded - 媒体元素 (参考 Josh Comeau)
+// ==========================================================================
+img, picture, video, canvas, svg
+  display block
+  max-width 100%
+  height auto
+
+img, svg
+  border-style none
+
+// ==========================================================================
+// 9. Forms - 表单 (参考 Normalize.css)
+// ==========================================================================
+button, input, optgroup, select, textarea
+  font-family inherit
+  font-size 100%
+  line-height 1.15
+  margin 0
+  color inherit
+
+button, input
+  overflow visible
+
+button, select
+  text-transform none
+
+button, [type='button'], [type='reset'], [type='submit']
+  -webkit-appearance button
+  cursor pointer
+
+button::-moz-focus-inner,
+[type='button']::-moz-focus-inner,
+[type='reset']::-moz-focus-inner,
+[type='submit']::-moz-focus-inner
+  border-style none
+  padding 0
+
+button:-moz-focusring,
+[type='button']:-moz-focusring,
+[type='reset']:-moz-focusring,
+[type='submit']:-moz-focusring
+  outline 1px dotted ButtonText
+
+fieldset
+  padding 0.35em 0.75em 0.625em
+
+legend
+  box-sizing border-box
+  color inherit
+  display table
+  max-width 100%
+  padding 0
+  white-space normal
+
+progress
+  vertical-align baseline
+
+textarea
+  overflow auto
+
+[type='checkbox'], [type='radio']
+  box-sizing border-box
+  padding 0
+
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button
+  height auto
+
+[type='search']
+  -webkit-appearance textfield
+  outline-offset -2px
+
+[type='search']::-webkit-search-decoration
+  -webkit-appearance none
+
+::-webkit-file-upload-button
+  -webkit-appearance button
+  font inherit
+
+// ==========================================================================
+// 10. Interactive - 交互元素
+// ==========================================================================
+details
+  display block
+
+summary
+  display list-item
+
+// ==========================================================================
+// 11. Misc - 其他
+// ==========================================================================
+template
+  display none
+
+[hidden]
+  display none
+
+// ==========================================================================
+// 12. 文本换行 - 避免长文本溢出
+// ==========================================================================
+p, h1, h2, h3, h4, h5, h6
+  overflow-wrap break-word
