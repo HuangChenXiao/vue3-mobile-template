@@ -6,13 +6,13 @@
         class="image-preview"
         :style="{ zIndex: zIndex }"
         @touchmove.prevent
-        @click.self="handleMaskClick"
+        @click="handleMaskClick"
       >
         <!-- 关闭按钮 -->
         <div v-if="showClose" class="image-preview__close" @click="handleClose"></div>
 
         <!-- 图片容器：使用 Swiper 实现边际滑动切换 -->
-        <div class="image-preview__container" @click.self="handleMaskClick">
+        <div class="image-preview__container">
           <Swiper
             v-if="images.length > 0"
             :modules="swiperModules"
@@ -140,10 +140,11 @@ const handleClose = () => {
   emit('close')
 }
 
-const handleMaskClick = () => {
-  if (props.closeOnClickMask) {
-    handleClose()
-  }
+const handleMaskClick = (e: MouseEvent) => {
+  if (!props.closeOnClickMask) return
+  // 点击图片本身不关闭（避免与双击缩放冲突）
+  if ((e.target as HTMLElement).tagName === 'IMG') return
+  handleClose()
 }
 </script>
 
